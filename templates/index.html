@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gold Price Predictor</title>
+      <style>
+    /* Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+    }
+    body {
+
+      background-size: cover;
+      background-position: center;
+       background-image: url("https://im.indiatimes.in/media/content/2016/Oct/askthemonsters_1476354601_725x725.jpg");
+    }
+    /* Header Styles */
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80px;
+      background-color: #fff;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    header h1 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #FFC107;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    }
+    /* Form Styles */
+    form {
+      width: 80%;
+      margin: 50px auto;
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.8);
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+    form label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 18px;
+      font-weight: 500;
+      color: #6C757D;
+    }
+    form input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 30px;
+      border: none;
+      border-radius: 5px;
+      background-color: #F5F5F5;
+      color: #6C757D;
+      font-size: 16px;
+      font-weight: 400;
+    }
+    form input[type="text"]:focus {
+      outline: none;
+      box-shadow: 0px 0px 5px #FFC107;
+    }
+    form input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      background-color: #FFC107;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+    form input[type="submit"]:hover {
+      background-color: #FF9800;
+    }
+    /* Media Queries */
+    @media (max-width: 768px) {
+      form {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <header>
+        <h1>Gold Price Predictor</h1>
+    </header>
+
+    <form method="post" action="/predict">
+        <label>SP</label>
+        <input type="text" name="SP">
+
+        <label>USO</label>
+        <input type="text" name="USO">
+
+        <label>SLV</label>
+        <input type="text" name="SLV">
+
+        <label>EUR/USD</label>
+        <input type="text" name="EUR/USD">
+
+        <input type="submit" value="Predict">
+
+    {% if result %}
+<div style="padding: 20px; background-color: #f5f5f5; border-radius: 10px; text-align: center;">
+  <h2>Your predicted gold price:</h2>
+  <h1 style="font-size: 48px; font-weight: 700; color: #FFC107;">${{ result }}</h1>
+</div>
+{% endif %}
+    </form>
+</body>
+</html>
