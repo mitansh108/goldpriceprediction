@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'goldpriceprediction'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C1802C2BFCA74A20AB4EEFDA9C1C21DA }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BEBCAFD5AC7A4F169BBAE7193C59FF9D }}
